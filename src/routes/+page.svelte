@@ -2,6 +2,7 @@
 	import {TodosList} from "$lib/features/todos";
 	import favicon from "./favicon.png";
 	import type {Todo} from "$lib/features/todos";
+	import appConfig from "$lib/app-config/appConfigStore";
 	const todos: Todo[] = [{content: "My first todo", id: 1, isCompleted: false}];
 </script>
 
@@ -12,6 +13,6 @@
 
 <div class="landing-page">
 	<h1>SvelteKit app template</h1>
-	<p>Hello world</p>
+	<p>{$appConfig.PUBLIC_WELCOME_MESSAGE}</p>
 	<TodosList {todos} />
 </div>
